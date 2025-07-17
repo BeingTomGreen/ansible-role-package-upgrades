@@ -1,0 +1,22 @@
+---
+
+- name: Ensure the cache is up to date
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: "{{ package_updates_cache_valid_time }}"
+
+- name: Ensure all packages are upgraded
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+
+- name: Autoremove unnecessary packages and optionally purge configs
+  ansible.builtin.apt:
+    autoremove: true
+    purge: "{{ package_updates_purge | default(false) | bool }}"
+  when: package_updates_autoremove | default(false) | bool
+
+- name: Run apt-clean
+  ansible.builtin.apt:
+    clean: "{{ package_updates_clean | default(false) | bool }}"
+  when: package_updates_clean | default(false) | bool

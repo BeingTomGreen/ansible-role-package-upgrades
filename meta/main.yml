@@ -1,0 +1,26 @@
+---
+
+galaxy_info:
+  author: Tom Green
+  description: A simple role for handling package updates on apt and yum/dnf based distributions.
+
+  role_name: package_updates
+  namespace: beingtomgreen
+  standalone: true
+
+  license: MIT
+
+  min_ansible_version: "2.12"
+
+  galaxy_tags:
+    - ubuntu
+    - debian
+    - updates
+    - upgrades
+    - apt
+    - dnf
+    - yum
+
+dependencies: []
+
+collections: []

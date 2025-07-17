@@ -1,0 +1,14 @@
+---
+
+- name: Check if a reboot is required
+  ansible.builtin.stat:
+    path: /var/run/reboot-required
+    get_attributes: false
+    get_mime: false
+  register: reboot_required_file
+
+- name: Reboot the server
+  ansible.builtin.reboot:
+    msg: "Reboot initiated by Ansible due to kernel updates"
+    test_command: uptime
+  when: reboot_required_file.stat.exists

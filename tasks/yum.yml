@@ -1,0 +1,15 @@
+---
+
+- name: Ensure package cache is up to date
+  ansible.builtin.dnf:
+    check_update: true
+
+- name: Ensure packages are on the latest versions
+  ansible.builtin.dnf:
+    name: '*'
+    state: latest
+
+- name: Ensure unneeded packages are removed
+  ansible.builtin.dnf:
+    state: autoremove
+  when: package_update_autoremove | default(false)

@@ -1,0 +1,3 @@
+# Since we're upgrading everything, this is actually exactly what I want
+tasks/apt.yml package-latest skip
+tasks/yum.yml package-latest skip

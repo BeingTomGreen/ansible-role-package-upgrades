@@ -1,0 +1,10 @@
+---
+
+- name: Upgrade apt based packages
+  ansible.builtin.include_tasks: "{{ ansible_pkg_mgr }}.yml"
+
+- name: Handle reboot-required on Debian/Ubuntu based systems
+  ansible.builtin.include_tasks: "reboot-required.yml"
+  when:
+    - ansible_os_family in ["Debian", "Ubuntu"]
+    - package_updates_reboot | default(false) | bool

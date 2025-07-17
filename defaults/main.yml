@@ -1,0 +1,18 @@
+---
+
+# Determine how long the package cache should be considered valid
+package_updates_cache_valid_time: 3600
+
+# Remove unused dependency packages for all module states except build-dep
+# Apt only
+package_updates_autoremove: false
+
+# Force purging of configuration files, when package_updates_autoremove is true
+# Apt only
+package_updates_purge: false
+
+# Run the equivalent of apt-get clean
+package_updates_clean: false
+
+# Optionally check for reboot-required, and reboot if necessary
+package_updates_reboot: false
