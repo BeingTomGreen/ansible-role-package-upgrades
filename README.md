@@ -1,6 +1,6 @@
-# beingtomgreen.package_updates
+# beingtomgreen.package_upgrades
 
-A simple role for handling package updates on apt and yum/dnf based distributions.
+A simple role for handling package upgrades on apt and yum/dnf based distributions.
 
 This role supports optionally rebooting Debian and Ubuntu based instances, to determine if a reboot is needed the role checks for the presence of `/var/run/reboot-required file`, however if you use Canonical's Livepatching service you may want to skip this.
 
@@ -12,8 +12,8 @@ Given that Galaxy seems to have abandoned roles, I suggest referencing this repo
 ---
 
 roles:
-  - name: beingtomgreen.package_updates
-    src: https://github.com/BeingTomGreen/ansible-role-package-updates.git
+  - name: beingtomgreen.package_upgrades
+    src: https://github.com/BeingTomGreen/ansible-role-package-upgrades.git
 
 collections: []
 ```
@@ -33,10 +33,10 @@ Now you're free to use it within your project:
   become: true
 
   roles:
-    - role: beingtomgreen.package_updates
+    - role: beingtomgreen.package_upgrades
       vars:
-        package_updates_reboot: true
-        package_updates_autoremove: true
+        package_upgrades_reboot: true
+        package_upgrades_autoremove: true
 ```
 
 ## Role Variables

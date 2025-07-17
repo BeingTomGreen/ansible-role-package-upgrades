@@ -2,9 +2,9 @@
 
 galaxy_info:
   author: Tom Green
-  description: A simple role for handling package updates on apt and yum/dnf based distributions.
+  description: A simple role for handling package upgrades on apt and yum/dnf based distributions.
 
-  role_name: package_updates
+  role_name: package_upgrades
   namespace: beingtomgreen
   standalone: true
 

@@ -7,4 +7,4 @@
   ansible.builtin.include_tasks: "reboot-required.yml"
   when:
     - ansible_os_family in ["Debian", "Ubuntu"]
-    - package_updates_reboot | default(false) | bool
+    - package_upgrades_reboot | default(false) | bool
