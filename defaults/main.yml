@@ -3,6 +3,10 @@
 # Determine how long the package cache should be considered valid
 package_upgrades_cache_valid_time: 3600
 
+# Determine the type of apt upgrade we want to do
+# Options: yes or safe for a safe-upgrade, full for a full-upgrade, or dist for a dist-upgrade
+package_upgrades_apt_upgrade_type: 'safe'
+
 # Remove unused dependency packages for all module states except build-dep
 # Apt only
 package_upgrades_autoremove: false

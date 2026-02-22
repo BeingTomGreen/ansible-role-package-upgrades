@@ -35,6 +35,7 @@ Now you're free to use it within your project:
   roles:
     - role: beingtomgreen.package_upgrades
       vars:
+        package_upgrades_apt_upgrade_type: 'full'
         package_upgrades_reboot: true
         package_upgrades_autoremove: true
 ```

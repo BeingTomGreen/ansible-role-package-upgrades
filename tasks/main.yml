@@ -6,5 +6,5 @@
 - name: Handle reboot-required on Debian/Ubuntu based systems
   ansible.builtin.include_tasks: "reboot-required.yml"
   when:
-    - ansible_os_family in ["Debian", "Ubuntu"]
+    - ansible_facts['os_family'] in ["Debian", "Ubuntu"]
     - package_upgrades_reboot | default(false) | bool

@@ -7,7 +7,7 @@
 - name: Ensure packages are on the latest versions
   ansible.builtin.dnf:
     name: '*'
-    state: latest
+    state: latest # noqa: package-latest
 
 - name: Ensure unneeded packages are removed
   ansible.builtin.dnf:

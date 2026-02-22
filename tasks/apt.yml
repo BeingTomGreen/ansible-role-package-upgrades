@@ -7,8 +7,7 @@
 
 - name: Ensure all packages are upgraded
   ansible.builtin.apt:
-    name: "*"
-    state: latest
+    upgrade: "{{ package_upgrades_apt_upgrade_type | default('full') }}"
 
 - name: Autoremove unnecessary packages and optionally purge configs
   ansible.builtin.apt:
